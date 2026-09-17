@@ -1,0 +1,33 @@
+{
+  "task": "<one bounded implementation or review task>",
+  "role": "<implementer|task reviewer|fix reviewer|whole-branch reviewer>",
+  "authority": [
+    "<approved plan path and exact heading>",
+    "<approved spec path and exact heading or symbol>"
+  ],
+  "baseline": "0000000000000000000000000000000000000000",
+  "head": "1111111111111111111111111111111111111111",
+  "changed_files": [
+    "<repository-relative path>"
+  ],
+  "current_state": [
+    "<facts needed to enter this task; navigation only>"
+  ],
+  "scope": [
+    "<allowed write set or review focus>"
+  ],
+  "known_findings": [
+    "<finding ID and evidence artifact, or None>"
+  ],
+  "do_not": [
+    "Do not treat this packet or an implementer report as source-of-truth evidence.",
+    "<task-specific prohibition>"
+  ],
+  "return_fields": [
+    "verdict",
+    "finding and severity",
+    "file and evidence",
+    "contract impact",
+    "recommended action"
+  ]
+}

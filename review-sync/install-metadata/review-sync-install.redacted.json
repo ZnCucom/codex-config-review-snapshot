@@ -1,0 +1,60 @@
+{
+  "agents_existed": true,
+  "agents_path": "C:\\Users\\chest\\.codex\\AGENTS.md",
+  "data_root": "C:\\Users\\chest\\AppData\\Local\\CodexReviewSync",
+  "hooks_existed": false,
+  "hooks_path": "C:\\Users\\chest\\.codex\\hooks.json",
+  "installed_agents": "<REDACTED>",
+  "installed_hooks": "<REDACTED>",
+  "managed_hooks": {
+    "Interrupt": {
+      "hooks": [
+        {
+          "command": "\"C:\\Users\\chest\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -B \"C:\\Users\\chest\\.codex\\review-sync\\review_sync_hook.py\" Interrupt --data-root \"C:\\Users\\chest\\AppData\\Local\\CodexReviewSync\"",
+          "commandWindows": "\"C:\\Users\\chest\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -B \"C:\\Users\\chest\\.codex\\review-sync\\review_sync_hook.py\" Interrupt --data-root \"C:\\Users\\chest\\AppData\\Local\\CodexReviewSync\"",
+          "timeout": 3,
+          "type": "command"
+        }
+      ]
+    },
+    "SessionEnd": {
+      "hooks": [
+        {
+          "command": "\"C:\\Users\\chest\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -B \"C:\\Users\\chest\\.codex\\review-sync\\review_sync_hook.py\" SessionEnd --data-root \"C:\\Users\\chest\\AppData\\Local\\CodexReviewSync\"",
+          "commandWindows": "\"C:\\Users\\chest\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -B \"C:\\Users\\chest\\.codex\\review-sync\\review_sync_hook.py\" SessionEnd --data-root \"C:\\Users\\chest\\AppData\\Local\\CodexReviewSync\"",
+          "timeout": 3,
+          "type": "command"
+        }
+      ]
+    },
+    "Stop": {
+      "hooks": [
+        {
+          "command": "\"C:\\Users\\chest\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -B \"C:\\Users\\chest\\.codex\\review-sync\\review_sync_hook.py\" Stop --data-root \"C:\\Users\\chest\\AppData\\Local\\CodexReviewSync\"",
+          "commandWindows": "\"C:\\Users\\chest\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -B \"C:\\Users\\chest\\.codex\\review-sync\\review_sync_hook.py\" Stop --data-root \"C:\\Users\\chest\\AppData\\Local\\CodexReviewSync\"",
+          "timeout": 3,
+          "type": "command"
+        }
+      ]
+    }
+  },
+  "original_agents": "<REDACTED>",
+  "original_hooks": "<REDACTED>",
+  "program": "C:\\Users\\chest\\.codex\\review-sync",
+  "program_digest": "7f1151fe6187028c761ca84d116e5eff37939e533b442c972886bd3201c062c2",
+  "scheduler": {
+    "codex_home": "C:\\Users\\chest\\.codex",
+    "data_root": "C:\\Users\\chest\\AppData\\Local\\CodexReviewSync",
+    "gh_executable": "C:\\Program Files\\GitHub CLI\\gh.exe",
+    "git_executable": "C:\\Users\\chest\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\git\\cmd\\git.exe",
+    "installation_id": "<REDACTED>",
+    "interval_minutes": 10,
+    "launcher": "C:\\Users\\chest\\.codex\\review-sync\\scheduled-task.pyw",
+    "python_executable": "C:\\Users\\chest\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "run_level": "LIMITED",
+    "script": "C:\\Users\\chest\\.codex\\review-sync\\review_sync_scheduled.py",
+    "task_name": "Codex Review Sync v1",
+    "user_scope": "CURRENT_USER"
+  },
+  "schema_version": 1
+}

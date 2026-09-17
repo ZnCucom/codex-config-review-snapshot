@@ -1,0 +1,11 @@
+{
+  "agents_existed": true,
+  "agents_path": "C:\\Users\\chest\\.codex\\AGENTS.md",
+  "product": "Optimize",
+  "router_segment": "<!-- BEGIN OPTIMIZE CONTEXT ROUTER -->\n## Optimize context routing\n\nUse the `context-state-management` skill for context recovery and long-running work. Choose LIGHTWEIGHT for small, single-session work; do not create `.agent` state. Choose STATEFUL for resumable, multi-phase, delegated, review-heavy, or compaction-risk work. A lightweight task may upgrade to STATEFUL when those conditions emerge.\nBefore the final response, follow the Skill's common task finalization.\n<!-- END OPTIMIZE CONTEXT ROUTER -->\n",
+  "schema_version": 1,
+  "skill_name": "context-state-management",
+  "skill_path": "C:\\Users\\chest\\.agents\\skills\\context-state-management",
+  "skill_sha256": "7e23a4b2a161d0dc722b1a1d60d5aa003a417272077bde6a7d4fa8c4e031c5cf",
+  "skill_version": "1.1.5"
+}

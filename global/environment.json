@@ -1,0 +1,48 @@
+{
+  "snapshot_date": "2026-09-17",
+  "collected_at_utc": "2026-09-17T23:27:24.839748+00:00",
+  "execution": "local Windows",
+  "os_kernel": "10.0.26200",
+  "CODEX_HOME": "C:\\Users\\chest\\.codex",
+  "global_instruction": "C:\\Users\\chest\\.codex\\AGENTS.md",
+  "config": "C:\\Users\\chest\\.codex\\config.toml",
+  "hooks": "C:\\Users\\chest\\.codex\\hooks.json",
+  "installed_optimize": "C:\\Users\\chest\\.agents\\skills\\context-state-management",
+  "installed_version": "1.1.5",
+  "optimize_source_repository": "C:\\Users\\chest\\OneDrive\\文档\\ChatGPT\\optimize",
+  "installed_version_worktree": "C:\\Users\\chest\\OneDrive\\文档\\ChatGPT\\optimize-worktrees\\v1.1-observability-global-install",
+  "source_versions": {
+    "main_checkout": "1.1.0",
+    "installed_version_worktree": "1.1.5"
+  },
+  "installed_vs_worktree_file_differences": [],
+  "installed_package_digest": "7e23a4b2a161d0dc722b1a1d60d5aa003a417272077bde6a7d4fa8c4e031c5cf",
+  "review_sync_install": "C:\\Users\\chest\\.codex\\review-sync",
+  "review_sync_registry": "C:\\Users\\chest\\AppData\\Local\\CodexReviewSync\\config.json",
+  "snapshot_workspace_registered_for_review_sync": false,
+  "app_package_version": "26.908.9136.0",
+  "component_version_from_config": "26.908.70816",
+  "backend_version_from_preceding_audit_current_session_metadata": "0.154.0-alpha.6.2",
+  "model_from_config": "gpt-6-astra",
+  "reasoning_effort_from_config": "medium",
+  "provider_from_config": "yoda",
+  "profile": "UNKNOWN",
+  "git": {
+    "C:\\Users\\chest\\OneDrive\\文档\\ChatGPT\\optimize": {
+      "head": "de4d638b7e08fe1094327ca826c70f3c2ec6afb2",
+      "branch": "codex/v1.1-globalization",
+      "preexisting_porcelain_status": " M .agent/current-work.md\n M review_sync/cli.py\n M review_sync/git.py\n M review_sync/github.py\n M review_sync/install.py\n M review_sync/model.py\n M review_sync/queue.py\n M review_sync/security.py\n M tests/test_review_sync_cli.py\n M tests/test_review_sync_core.py\n M tests/test_review_sync_hook.py\n M tests/test_review_sync_install.py\n M tests/test_review_sync_queue.py\n M tests/test_review_sync_security.py\n M tests/test_review_sync_snapshot.py\n M tests/test_review_sync_upload.py\n"
+    },
+    "C:\\Users\\chest\\OneDrive\\文档\\ChatGPT\\optimize-worktrees\\v1.1-observability-global-install": {
+      "head": "f139ef312c71d29de0e99af2fec172aa4ceaf1eb",
+      "branch": "codex/v1.1-observability-global-install",
+      "preexisting_porcelain_status": ""
+    }
+  },
+  "limits": [
+    "Installed/discoverable does not prove every skill body is invoked on every task.",
+    "Working-tree files, not only committed HEAD content, were captured.",
+    "Raw sessions, operational state and observability records were not read or copied in this packaging task.",
+    "No independent server-side effective-configuration verification was performed."
+  ]
+}

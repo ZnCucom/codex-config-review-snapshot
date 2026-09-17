@@ -1,0 +1,11 @@
+{
+  "task_name": "Codex Review Sync v1",
+  "enabled": true,
+  "observed_state": "Ready",
+  "repeat_interval": "PT10M",
+  "execute": "C:\\Users\\chest\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\pythonw.exe",
+  "arguments": "-B C:\\Users\\chest\\.codex\\review-sync\\scheduled-task.pyw",
+  "scope": "CURRENT_USER",
+  "definition_sha256_at_start": "2b0499d80c45e79b31da30e2058bb307bc2216db4c932172f74d408e77a43217",
+  "projection_note": "Allowlisted projection only; no credentials, principal account identifiers, or raw task XML included."
+}

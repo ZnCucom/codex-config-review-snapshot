@@ -1,0 +1,41 @@
+{
+  "description": "User lifecycle hooks.",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:\\Users\\chest\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -B \"C:\\Users\\chest\\.codex\\review-sync\\review_sync_hook.py\" Stop --data-root \"C:\\Users\\chest\\AppData\\Local\\CodexReviewSync\"",
+            "commandWindows": "\"C:\\Users\\chest\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -B \"C:\\Users\\chest\\.codex\\review-sync\\review_sync_hook.py\" Stop --data-root \"C:\\Users\\chest\\AppData\\Local\\CodexReviewSync\"",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "Interrupt": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:\\Users\\chest\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -B \"C:\\Users\\chest\\.codex\\review-sync\\review_sync_hook.py\" Interrupt --data-root \"C:\\Users\\chest\\AppData\\Local\\CodexReviewSync\"",
+            "commandWindows": "\"C:\\Users\\chest\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -B \"C:\\Users\\chest\\.codex\\review-sync\\review_sync_hook.py\" Interrupt --data-root \"C:\\Users\\chest\\AppData\\Local\\CodexReviewSync\"",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:\\Users\\chest\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -B \"C:\\Users\\chest\\.codex\\review-sync\\review_sync_hook.py\" SessionEnd --data-root \"C:\\Users\\chest\\AppData\\Local\\CodexReviewSync\"",
+            "commandWindows": "\"C:\\Users\\chest\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -B \"C:\\Users\\chest\\.codex\\review-sync\\review_sync_hook.py\" SessionEnd --data-root \"C:\\Users\\chest\\AppData\\Local\\CodexReviewSync\"",
+            "timeout": 3
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+# Security and scope
+
+- Only allowlisted configuration, textual skills/dependencies, mechanism source, templates and directly relevant designs/plans were copied.
+- Config/metadata values were sanitized in memory before the first snapshot write. No raw secret-bearing copy was staged.
+- <REDACTED> replaces authentication-shaped values, transient connection/install/device identifiers, encoded installation backup blobs and email literals. Unrelated project-trust sections were omitted. Nonessential remote-image markup was omitted from one reference. Credential-shaped documentation examples were conservatively redacted.
+- Source contains names, regexes and descriptions such as secret, Authorization, api_key and github_pat_; these are not necessarily live secrets. Keyword matches were assessed by context. The sk- substring also matches ordinary task- words. Public credentials: 'include' examples are browser options. The visual-companion cookie-name constant is a name, not a session cookie.
+- A finite pre-first-commit check covers sk-, ghp_, github_pat_, Bearer, Authorization, api_key, apikey, access_token, refresh_token, password, secret, PEM/OpenSSH private-key headers; credential-shaped assignments, credential-bearing URLs, suspicious long material and prohibited filenames/types. No unresolved candidate is allowed into the first commit. Staged Git blobs are checked again before commit.
+- High-entropy candidates were confined to public documentation/CDN URL paths. Remote image markup was omitted; public GitHub, MDN and OWASP documentation paths were retained. SHA values are integrity identifiers, not credentials.
+- No auth files, environment files, keys, browser state, credential stores, raw task/chat sessions, memory databases, operational .agent files, actual summaries/review archives/queues/receipts, caches, dependencies, Git histories or unrelated private documents are included.
+- .audit-local/ is local packaging scratch excluded from Git. It contains hashes, source-preservation checks and this one-time packaging review; it is not Optimize state, a checkpoint, observability data or a new persistent scanning system.
+- This bounded inspection does not guarantee detection of every possible secret. Unknown security candidates are excluded/redacted, not uploaded for later removal.
+- Copied scripts are review material. There is no GitHub Actions workflow or automatic deployment integration.
+- MANIFEST.md includes SHA-256 for every other tracked snapshot file. A file cannot contain its own literal final SHA-256; its own row defers that hash to the delivered external result and immutable Git commit.

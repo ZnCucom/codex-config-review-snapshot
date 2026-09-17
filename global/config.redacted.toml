@@ -1,0 +1,122 @@
+# Auto-injected by Yoda MaaS
+model_provider = "yoda"
+model = "gpt-6-astra"
+
+personality = "pragmatic"
+sandbox_mode = "danger-full-access"
+web_search = "live"
+model_verbosity = "high"
+service_tier = "default"
+
+
+model_reasoning_effort = "medium"
+
+
+
+notify = [ "C:\\Users\\chest\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\6f12e0ef1c6e5061\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
+
+[marketplaces.openai-bundled]
+source_type = "local"
+source = '\\?\C:\Users\chest\.codex\.tmp\bundled-marketplaces\openai-bundled'
+
+[marketplaces.openai-primary-runtime]
+source_type = "local"
+source = '\\?\C:\Users\chest\.cache\codex-runtimes\codex-primary-runtime\plugins\openai-primary-runtime'
+
+[plugins."codex-app-tools@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."sites@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
+enabled = true
+
+[features]
+js_repl = false
+
+[mcp_servers.node_repl]
+args = []
+command = 'C:\Users\chest\AppData\Local\OpenAI\Codex\runtimes\cua_node\6f12e0ef1c6e5061\bin\node_repl.exe'
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\chest\AppData\Local\OpenAI\Codex\runtimes\cua_node\6f12e0ef1c6e5061\bin\node_modules'
+NODE_REPL_NODE_PATH = 'C:\Users\chest\AppData\Local\OpenAI\Codex\runtimes\cua_node\6f12e0ef1c6e5061\bin\node.exe'
+NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\chest\.codex;C:\Users\chest\AppData\Local\OpenAI\Codex\runtimes\cua_node\6f12e0ef1c6e5061\bin\node_modules'
+CODEX_HOME = 'C:\Users\chest\.codex'
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+BROWSER_USE_TINYSKY_ENABLED = "0"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.908.70816"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"C:/Users/chest/.codex/plugins/cache/openai-bundled/browser/26.908.70816/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+SKY_CUA_NATIVE_PIPE = "1"
+SKY_CUA_NATIVE_PIPE_DIRECTORY = "<REDACTED>"
+CODEX_CLI_PATH = 'C:\Users\chest\AppData\Local\OpenAI\Codex\bin\12219cbfbcbddde7\codex.exe'
+
+[mcp_servers.cua_repl]
+command = 'C:\Program Files\WindowsApps\OpenAI.Codex_26.908.9136.0_x64__2p2nqsd0c76g0\app\ChatGPT.exe'
+enabled = false
+
+[desktop]
+conversationDetailMode = "STEPS_COMMANDS"
+sansFontSize = 14
+codeFontSize = 13
+ambient-suggestions-enabled = true
+followUpQueueMode = "steer"
+selected-avatar-id = "stacky"
+
+[windows]
+sandbox = "elevated"
+
+[projects.'c:\users\chest\onedrive\文档\chatgpt\optimize']
+trust_level = "trusted"
+
+[projects.'c:\users\chest\onedrive\文档\chatgpt\optimize-smoke-runs\simple']
+trust_level = "trusted"
+
+[projects.'c:\users\chest\onedrive\文档\chatgpt\optimize-smoke-runs\phased']
+trust_level = "trusted"
+
+[projects.'c:\users\chest\onedrive\文档\chatgpt\optimize-global-only-app-test']
+trust_level = "trusted"
+
+[projects.'c:\users\chest\onedrive\文档\chatgpt\optimize-global-only-summary-finalization-app-test']
+trust_level = "trusted"
+
+[projects.'c:\users\chest\documents\codex\2026-09-17\codex-superpowers-optimize-agents-md-skills']
+trust_level = "trusted"
+
+# Auto-injected by Yoda MaaS
+[model_providers.yoda]
+name = "OpenAI"
+requires_openai_auth = true
+supports_websockets = true
+wire_api = "responses"

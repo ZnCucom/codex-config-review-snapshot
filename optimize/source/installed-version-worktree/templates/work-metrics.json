@@ -1,0 +1,74 @@
+{
+  "version": 2,
+  "work_scope": "Factor engine implementation through final independent review",
+  "correctness_gate": "Required tests, static checks, build, task review, and final review",
+  "started_at": "2026-09-13T10:00:00+00:00",
+  "ended_at": "2026-09-13T11:00:00+00:00",
+  "baseline": "30d19efbb87fb15ba52fddc17e1fc344387ff870",
+  "head": "6a7546322e59f211ebabca491e57e3905975137d",
+  "counters": {
+    "wait_calls": 2,
+    "short_wait_calls": 0,
+    "unknown_wait_bound_calls": 0,
+    "long_wait_early_returns": 2,
+    "long_wait_timeouts": 0,
+    "wait_elapsed_seconds": 900,
+    "list_agents_calls": 0,
+    "liveness_only_list_agents_calls": 0,
+    "full_plan_reads": 0,
+    "full_spec_reads": 0,
+    "diff_calls": 4,
+    "full_diff_calls": 1,
+    "duplicate_file_reads": 1,
+    "recovery_reads": 3,
+    "tool_outputs": 25,
+    "large_tool_outputs": 0,
+    "duplicate_tool_output_bytes": 0,
+    "compactions": 0,
+    "subagent_count": 2,
+    "review_cycles": 2,
+    "work_duration_seconds": 3600
+  },
+  "tokens": {
+    "input_tokens": 100000,
+    "cached_input_tokens": 90000,
+    "output_tokens": 5000,
+    "reasoning_output_tokens": 2000,
+    "total_tokens": 105000
+  },
+  "correctness": {
+    "test_gates": [
+      {
+        "command": "pnpm test",
+        "result": "PASS",
+        "evidence": {
+          "path": "tests/fixtures/artifacts/m07-tests.txt",
+          "sha256": "50548bb4f9c6ce37dfba8f0ded3ce6fd3ad27c265283fc3cd3013040d474abc3"
+        }
+      }
+    ],
+    "independent_review_verdict": "APPROVE",
+    "review_evidence": [
+      {
+        "path": "tests/fixtures/artifacts/m07-final-review.md",
+        "sha256": "40f2b18a7bf192b8fdbe0d23730b51c78f0f93608ebb484f82e13fd095977d31"
+      }
+    ]
+  },
+  "evidence": {
+    "rollout": {
+      "path": "tests/fixtures/rollout.jsonl",
+      "sha256": "8ef317ccf3dd8b87fc598b84fd7f429196ed2e94f994fc9d49d2287b8543044e"
+    },
+    "manual_count_log": {
+      "path": "tests/fixtures/artifacts/m07-context-counts.md",
+      "sha256": "0ecbc9b1c71c60de6fae3a6529905f3e89298d9334086cb2aa79c6e4eec3568d"
+    },
+    "method_notes": "Automatic rollout aggregates plus manual classification linked above."
+  },
+  "notes": [
+    "Compare only with work units that completed equivalent correctness gates."
+  ],
+  "work_type": "feature",
+  "work_id": "factor-engine"
+}
