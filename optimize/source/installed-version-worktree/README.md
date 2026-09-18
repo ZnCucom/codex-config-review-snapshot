@@ -32,11 +32,11 @@ Use `python` instead when a normal Python installation is already on `PATH`.
 
 ## Operating modes
 
-Choose LIGHTWEIGHT for clearly small, narrow, single-agent work that should finish in one session. Use targeted reads and diffs, bounded output, exact verification, and long waits if an agent is later introduced. Do not create `.agent` files or run the state validator merely because the global skill is available.
+LIGHTWEIGHT defaults to targeted reads -> work -> proportionate verification -> finish. It does not create .agent state, run its validator, checkpoint, read observability instructions, archive, or create repository-external task summaries.
 
-Choose STATEFUL when work is multi-phase, delegated, independently reviewed, resumable, planned across sessions, or likely to cross compaction. One durable work unit normally uses one root task and records an open `work_type`, opaque `work_id`, optional `owner`, exact Git identity, current operational state, and the next action. Authority files may be absent; source, tests, repository instructions, Git, approved decisions, and original review evidence remain L0.
+Use STATEFUL when durable recovery is genuinely valuable for long-running/cross-session work, substantial multi-phase milestones, compaction risk, durable handoff, delegated work requiring recovery, or interruption/resumption. A plan, one review or temporary agent does not independently require STATEFUL. Preserve L0 authority, L1/L2/optional L3, Git identity, drift validation, exact recovery, scoped packets and material checkpoints.
 
-Start LIGHTWEIGHT when uncertain. Upgrade immediately when stateful conditions emerge: initialize v2 state, reconstruct the current facts from Git and exact L0, fill L1/L2, optionally fill ignored L3, stage only L1/L2, validate, and continue. Optimize does not automatically downgrade stateful work.
+Start LIGHTWEIGHT when uncertain. Upgrade only for a real durable-recovery need, reconstruct facts from Git/L0, initialize and validate existing state formats, and continue. Do not silently discard established STATEFUL evidence.
 
 ## Commands
 
@@ -90,7 +90,7 @@ Measure a Codex JSONL rollout without copying its conversation content:
 & $OptimizePython scripts/optimize_context.py analyze-rollout C:\path\to\rollout.jsonl --json
 ```
 
-Save a repository-external task summary, archive a reviewer return without altering its body bytes, and export a project-scoped report:
+When explicitly requested or justified by a formal investigation, important incident forensics or an explicit need to preserve review evidence, the existing commands can save a repository-external summary, archive an unchanged reviewer return, or export a report:
 
 ```powershell
 & $OptimizePython scripts/optimize_context.py save-task-summary --repo C:\path\to\repo --input C:\path\to\task-record.json
@@ -100,7 +100,7 @@ Save a repository-external task summary, archive a reviewer return without alter
 
 The default store is `%LOCALAPPDATA%\Optimize\observability`; `--observability-root` selects a controlled alternate root. Records are keyed by repository/worktree identity and stable task archive ID, live outside the business repository, never create `.agent`, and never become default recovery context. Exact repeats are no-ops; inconsistent content at an existing identity is a conflict rather than an overwrite. Only an explicitly named JSONL is inspected. Cumulative token snapshots are not summed, cached/new input and session/task scope remain distinct, requested timeouts are not reported as actual waits, and malformed tails are marked partial/unsupported. Default export omits raw sessions, source, environment variables, absolute repository/session paths, and reviewer bodies; `--include-review-bodies` is explicit and still requires manual secret review. The closed JSON inputs and boundary rules are documented in [the installed Skill reference](skills/context-state-management/references/observability.md).
 
-LIGHTWEIGHT and STATEFUL share one finalization check. When repository-external writes are allowed, the Skill calls `save-task-summary` once and reports success only from the returned archive ID and paths. Read-only, no-write, and sandbox restrictions skip recording; an unavailable runtime or failed call is reported once without retry. The final response states `saved`, `skipped`, or `failed` with its real path/ID or reason. Log export, read-only acceptance, and observability/log maintenance do not recursively create task summaries.
+There is no common automatic observability closeout. Ordinary completion, blockers and handoffs do not cause a record, and LIGHTWEIGHT does not load the observability reference by default. STATEFUL still checkpoints material operational state for recovery. Only an explicitly justified recording reads the reference and makes one attempt; read-only restrictions prevail, failed recording is not automatically retried, and no status footer is required for ordinary tasks. Recording/export does not recursively record itself.
 
 Validate a complete generic work-unit comparison record after copying and filling the schema-v2 template:
 

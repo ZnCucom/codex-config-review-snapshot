@@ -1,6 +1,6 @@
 ---
 name: context-state-management
-description: Use when Codex work may be resumable, multi-phase, delegated, independently reviewed, interrupted or at risk of compaction, or when recovering repository context; also governs bounded agent waits and progressive reads.
+description: Use when durable context recovery is valuable for long-running or cross-session work, resuming interrupted work or compaction risk; retain lightweight defaults otherwise.
 ---
 
 # Context State Management
@@ -13,11 +13,11 @@ Operational state is navigation, never source of truth. Authority descends from 
 
 ## Choose a mode
 
-Use **LIGHTWEIGHT** for clearly small, single-session, single-agent work with narrow scope and little compaction or handoff risk. Apply targeted reads, bounded output, exact verification, and existing repository rules. **Do not create `.agent` state or run its validator.**
+LIGHTWEIGHT defaults to targeted reads -> work -> proportionate verification -> finish. **Do not create `.agent` state**, run its validator, checkpoint, save a task summary, archive, read the observability reference, execute observability closeout, or create repository-external task records by default.
 
-Use **STATEFUL** when work is resumable, multi-phase, delegated, independently reviewed, planned across sessions, or likely to cross compaction. One stateful work unit normally uses one root task.
+Use STATEFUL only when durable recovery has real value: cross-session work, substantial multi-phase milestones, compaction risk, durable handoff, a genuinely delegated workflow requiring recovery, or long-task interruption/resumption. A plan, one review or a temporary agent alone is insufficient.
 
-When uncertain, start LIGHTWEIGHT. Upgrade immediately to STATEFUL when those conditions emerge; do not invent a parallel task directory, journal, plan, or ledger. There is no automatic downgrade.
+When uncertain, start LIGHTWEIGHT. Upgrade when durable recovery becomes necessary; do not create a parallel journal, plan or ledger as a substitute. Do not silently discard established STATEFUL evidence.
 
 ## Stateful setup and recovery
 
@@ -42,21 +42,21 @@ For v2 recovery:
 
 Checkpoint L2/L3 after a material implementation/commit, verdict, finding change, clarification, verification, blocker, before a long wait, handoff, or task end. Routine turns do not earn checkpoints.
 
-## Task finalization
+## Finish and optional evidence recording
 
-At completion, blocker, or handoff, both LIGHTWEIGHT and STATEFUL run this common closeout. Read `references/observability.md`. When repository-external writes are allowed, create its minimal input and invoke bundled `scripts/optimize_context.py save-task-summary` once with verified Python. Accept only the returned status and path/ID as success. Leave unknown task/model/token fields unknown; do not scan history to fill them. No `.agent` in LIGHTWEIGHT does not prohibit permitted repository-external recording.
+LIGHTWEIGHT finishes after proportionate verification, without automatic state or observability maintenance. General completion, an ordinary blocker or ordinary handoff does not trigger a record.
 
-Read-only, no-write, and sandbox restrictions take priority. If recording is forbidden, unavailable, or fails, do not retry; give one reason. End the final response with `Summary record: saved — <path-or-ID>`, `Summary record: skipped — <reason>`, or `Summary record: failed — <reason>`.
+STATEFUL preserves material L2/L3 checkpoints and exact recovery evidence. This does not require an observability task summary.
 
-Do not record log export, read-only acceptance, or log maintenance; observability does not recursively record itself. Archive formal review returns before fixes, a long wait, or task end.
+Only an explicit user request, formal performance/behavior investigation, important incident forensics, or explicit need to preserve review evidence can trigger observability. At that boundary, read `references/observability.md` and use the existing CLI. Preserve unknown values and do not scan history to fill them. Read-only/no-write restrictions take priority; one failed attempt is reported, do not retry automatically. The mechanism does not recursively record itself. No summary-record footer is required when observability was not requested or needed.
 
 ## Delegation, waiting, and review
 
 Give agents: task, role, exact authority, baseline, HEAD, changed files, current state, scope, known findings, prohibitions, and required return fields. The receiver independently opens L0; packets and reports are claims to verify.
 
-After dispatch, record continuation and call one bounded long wait: **5-10 minutes** for narrow analysis or **10-30 minutes** for implementation/full review. It returns early on completion. After a timeout, inspect status once and choose another long wait, steering, recovery, or failure handling. **Never repeatedly poll** an active agent or call `list_agents` merely for liveness. Status inspection is allowed after a long timeout, a dependency, an error, or an explicit user request.
+When genuinely dependent on an agent, use a bounded event wait permitted by the current runtime. Do useful local work otherwise. Record continuation only when durable recovery requires it. **Never repeatedly poll** an agent or query status solely for liveness; inspect status for a timeout, dependency, error or explicit request.
 
-Keep every review and test cycle correctness requires. Independent review uses exact authority, patch, and evidence; another agent's conclusion is not proof.
+Use independent review where risk or project rules justify it. Reuse valid tests for unchanged inputs. After two consecutive substantive fix/re-review rounds without convergence, revisit requirements, diff and failing evidence before selecting a new explicit strategy. Another agent's conclusion is not proof.
 
 ## Progressive reads
 

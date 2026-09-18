@@ -1,7 +1,9 @@
-# Codex configuration review snapshot — 2026-09-17
+# Codex configuration review snapshot
 
-Private review snapshot of current custom Codex rules, skills, Optimize context/state mechanisms and Review Sync. Review for excessive rules, duplicate triggers, conflicting instructions, unnecessary token/tool overhead, agent loops or unproductive autonomous work, and mechanisms to retain, simplify or remove.
+Private, redacted snapshot refreshed after Astra simplification and Review Sync linked-worktree support. Start with MANIFEST.md, global/AGENTS.md, global/environment.json and review-sync/source/installation-worktree/docs/review-sync-worktrees.md.
 
-Start with MANIFEST.md, SECURITY.md, global/AGENTS.md and global/environment.json. Installed runtime files and development sources are intentionally separated; older designs are references, not evidence of active rules. optimize/installed/context-state-management intentionally mirrors skills/context-state-management.
+Installed Optimize is 1.1.6. Deployed Review Sync source now comes from the installation worktree. Old main-checkout copies are historical working-file references, not the new runtime source. Its uncommitted work was not edited.
 
-This is not a complete Codex installation, installer or runnable restoration package. Sensitive values and historical sessions have been actively excluded or redacted. Do not restore authentication from this repository or execute copied scripts as part of file review. No optimization or repair was performed.
+This is a review artifact, not a runnable restoration package. Authentication, sessions, memory/state contents, local backups and observability records are excluded. Installed/discoverable does not prove host hook invocation. Tests and checkpoint verification do not establish token savings.
+
+The Optimize source repository has no configured origin: normal branch push is blocked. The private configuration snapshot and Review Sync checkpoint are separate deliveries.

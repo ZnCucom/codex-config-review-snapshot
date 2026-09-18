@@ -18,10 +18,15 @@ STATE_NAME = ".optimize-context-install.json"
 START_MARKER = "<!-- BEGIN OPTIMIZE CONTEXT ROUTER -->"
 END_MARKER = "<!-- END OPTIMIZE CONTEXT ROUTER -->"
 ROUTER_BLOCK = f"""{START_MARKER}
-## Optimize context routing
+## Global workflow policy
 
-Use the `context-state-management` skill for context recovery and long-running work. Choose LIGHTWEIGHT for small, single-session work; do not create `.agent` state. Choose STATEFUL for resumable, multi-phase, delegated, review-heavy, or compaction-risk work. A lightweight task may upgrade to STATEFUL when those conditions emerge.
-Before the final response, follow the Skill's common task finalization.
+- Continue clearly authorized reversible work without repeated approval.
+- Match verification to risk and scope; reuse successful evidence while relevant inputs remain unchanged.
+- Current runtime instructions and exposed tool schemas govern tool interfaces.
+- Avoid repeated reads, searches, tests, waits or status checks without new evidence. Do not poll agents for liveness or reread unchanged large files.
+- After two consecutive tool rounds produce no new evidence, code/state change, test result or error information, stop and reassess. Do not repeat the same pattern a third time without a new explicit reason.
+- Use the context-state-management skill in STATEFUL mode only when durable recovery is valuable for long-running, cross-session or interruption-prone work. Otherwise remain LIGHTWEIGHT.
+- Project AGENTS.md supplies project-specific constraints.
 {END_MARKER}
 """
 STATE_FIELDS = {

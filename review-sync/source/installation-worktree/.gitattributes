@@ -1,0 +1,5 @@
+
+# Preserve exact reviewed fixture bytes for Review Sync safety gates.
+tests/fixtures/rollout.jsonl text eol=lf
+tests/evidence/v1.1-install-idempotent-response.md text eol=lf
+tests/fixtures/current_rollout_v0154_shapes.jsonl text eol=lf

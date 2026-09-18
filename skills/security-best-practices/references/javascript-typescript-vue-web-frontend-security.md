@@ -530,7 +530,7 @@ Required:
 
 Insecure patterns:
 
-* `/?token=<REDACTED> `/#access_token=...` used beyond short-lived OAuth handoff.
+* `/?token=...`, `/#access_token=...` used beyond short-lived OAuth handoff.
 * `console.log(userSession)` that includes tokens/PII.
 
 Detection hints:

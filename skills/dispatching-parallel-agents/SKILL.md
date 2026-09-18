@@ -1,9 +1,12 @@
 ---
 name: dispatching-parallel-agents
-description: Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies
+description: Use when at least two substantial independent work units have clear parallel value and limited shared state, making delegation more reasonable than direct execution.
 ---
 
 # Dispatching Parallel Agents
+
+Apply the selection gate before the examples below: ordinary small and medium work stays with the current Astra controller. Multiple failures alone do not require parallel agents. Delegate only substantial independent units with clear benefit and limited shared state, subject to current runtime permissions. A plan is not itself a trigger.
+
 
 ## Overview
 

@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-17",
-  "collected_at_utc": "2026-09-17T23:27:24.839748+00:00",
+  "collected_at_utc": "2026-09-18T02:44:59.712089+00:00",
   "execution": "local Windows",
   "os_kernel": "10.0.26200",
   "CODEX_HOME": "C:\\Users\\chest\\.codex",
@@ -8,15 +8,15 @@
   "config": "C:\\Users\\chest\\.codex\\config.toml",
   "hooks": "C:\\Users\\chest\\.codex\\hooks.json",
   "installed_optimize": "C:\\Users\\chest\\.agents\\skills\\context-state-management",
-  "installed_version": "1.1.5",
+  "installed_version": "1.1.6",
   "optimize_source_repository": "C:\\Users\\chest\\OneDrive\\文档\\ChatGPT\\optimize",
   "installed_version_worktree": "C:\\Users\\chest\\OneDrive\\文档\\ChatGPT\\optimize-worktrees\\v1.1-observability-global-install",
   "source_versions": {
     "main_checkout": "1.1.0",
-    "installed_version_worktree": "1.1.5"
+    "installed_version_worktree": "1.1.6"
   },
   "installed_vs_worktree_file_differences": [],
-  "installed_package_digest": "7e23a4b2a161d0dc722b1a1d60d5aa003a417272077bde6a7d4fa8c4e031c5cf",
+  "installed_package_digest": "7e2baeb1420784b78bb0e1bed796865a5e2cd155eaff023b659fb21f512fa5a4",
   "review_sync_install": "C:\\Users\\chest\\.codex\\review-sync",
   "review_sync_registry": "C:\\Users\\chest\\AppData\\Local\\CodexReviewSync\\config.json",
   "snapshot_workspace_registered_for_review_sync": false,
@@ -34,7 +34,7 @@
       "preexisting_porcelain_status": " M .agent/current-work.md\n M review_sync/cli.py\n M review_sync/git.py\n M review_sync/github.py\n M review_sync/install.py\n M review_sync/model.py\n M review_sync/queue.py\n M review_sync/security.py\n M tests/test_review_sync_cli.py\n M tests/test_review_sync_core.py\n M tests/test_review_sync_hook.py\n M tests/test_review_sync_install.py\n M tests/test_review_sync_queue.py\n M tests/test_review_sync_security.py\n M tests/test_review_sync_snapshot.py\n M tests/test_review_sync_upload.py\n"
     },
     "C:\\Users\\chest\\OneDrive\\文档\\ChatGPT\\optimize-worktrees\\v1.1-observability-global-install": {
-      "head": "f139ef312c71d29de0e99af2fec172aa4ceaf1eb",
+      "head": "7b04199363f075643cea55ed0d2ed0ede58df314",
       "branch": "codex/v1.1-observability-global-install",
       "preexisting_porcelain_status": ""
     }
@@ -44,5 +44,12 @@
     "Working-tree files, not only committed HEAD content, were captured.",
     "Raw sessions, operational state and observability records were not read or copied in this packaging task.",
     "No independent server-side effective-configuration verification was performed."
-  ]
+  ],
+  "optimize_source_origin": "NOT_CONFIGURED; normal source push blocked",
+  "review_sync_followup_source": "C:\\Users\\chest\\OneDrive\\文档\\ChatGPT\\optimize-worktrees\\v1.1-observability-global-install",
+  "installation_worktree_auto_recognized": true,
+  "review_sync_program_digest": "825e838d2811f62bbce64a5426fc99048b8404fdf39e127f0558f0c878ffe469",
+  "app_package_version_evidence": "Inherited audit observation; not revalidated in this follow-up",
+  "component_version_from_config_evidence": "Inherited audit observation; not revalidated in this follow-up",
+  "backend_version_from_preceding_audit_current_session_metadata_evidence": "Inherited audit observation; not revalidated in this follow-up"
 }

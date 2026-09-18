@@ -237,7 +237,7 @@ Required:
 
 Insecure patterns:
 
-* `?token=<REDACTED> `?api_key=<REDACTED> `?auth=...` used for primary auth.
+* `?token=...`, `?api_key=...`, `?auth=...` used for primary auth.
 * Long-lived access tokens embedded in URLs (leak via logs, referrers, caches).
 
 Detection hints:

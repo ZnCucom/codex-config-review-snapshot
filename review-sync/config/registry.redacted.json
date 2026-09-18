@@ -13,7 +13,7 @@
       "target": {
         "identity": "ZnCucom/optimize-review-checkpoints",
         "kind": "github",
-        "push_url": "<REDACTED>:ZnCucom/optimize-review-checkpoints.git",
+        "push_url": "<REDACTED_EMAIL>:ZnCucom/optimize-review-checkpoints.git",
         "remote_automation_reviewed": false,
         "remote_ref": "refs/heads/codex-sync/105ee9ae358f/b4568f1586aab763c995"
       },

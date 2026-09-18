@@ -18,7 +18,7 @@ pwcli snapshot
 ```bash
 pwcli open https://example.com/form --headed
 pwcli snapshot
-pwcli fill e1 "user@example.com"
+pwcli fill e1 "<REDACTED_EMAIL>"
 pwcli fill e2 "password123"
 pwcli click e3
 pwcli snapshot

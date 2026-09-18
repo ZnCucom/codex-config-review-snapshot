@@ -7,5 +7,8 @@
   "arguments": "-B C:\\Users\\chest\\.codex\\review-sync\\scheduled-task.pyw",
   "scope": "CURRENT_USER",
   "definition_sha256_at_start": "2b0499d80c45e79b31da30e2058bb307bc2216db4c932172f74d408e77a43217",
-  "projection_note": "Allowlisted projection only; no credentials, principal account identifiers, or raw task XML included."
+  "projection_note": "Allowlisted projection only; no credentials, principal account identifiers, or raw task XML included.",
+  "last_result": 0,
+  "probe_status": "tick_completed",
+  "probe_ran_at": "2026-09-18T02:42:18.708030+00:00"
 }

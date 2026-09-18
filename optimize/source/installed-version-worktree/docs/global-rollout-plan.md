@@ -110,7 +110,7 @@ Verify that Optimize remains almost invisible for small, self-contained work.
 1. Run several ordinary tasks that are expected to fit one session, such as a one-file typo, a narrow documentation correction, and a small reversible bug fix.
 2. Record the initial and final repository path list and Git status.
 3. Confirm that the router chooses LIGHTWEIGHT, does not call `init`, does not run the state validator merely because the Skill exists, and does not create `.agent` files.
-4. If one task becomes multi-phase, delegated, review-heavy, resumable, or compaction-prone, exercise the explicit LIGHTWEIGHT-to-STATEFUL upgrade once. Keep the same work identity and initialize only at that point.
+4. If a task develops a concrete durable-recovery need (cross-session, substantial multi-phase, compaction risk or durable handoff), exercise the explicit LIGHTWEIGHT-to-STATEFUL upgrade once; a plan, one review or temporary agent alone is not sufficient. Keep the same work identity and initialize only at that point.
 
 ### Exit criteria
 

@@ -64,7 +64,7 @@ Any later production path is drift. The validator also requires exact existing 4
 
 LIGHTWEIGHT mode applies targeted reads, progressive diffs and documents, bounded output, exact verification, and the agent wait policy without creating repository state. It is the default for clearly small, single-session, single-agent work. When uncertain, Codex starts lightweight.
 
-STATEFUL mode is selected when work is resumable, multi-phase, delegated, independently reviewed, planned across sessions, or likely to cross compaction. It activates L1/L2/optional L3, Git validation, checkpoints, scoped packets, and deterministic recovery. A lightweight task upgrades as soon as any of those conditions emerges: initialize generic state, reconstruct current facts from Git and L0, fill and stage L1/L2, optionally fill ignored L3, validate, then continue. There is no automatic downgrade.
+STATEFUL mode is selected only when durable recovery is valuable for cross-session work, substantial multi-phase milestones, compaction risk, durable handoff, delegated workflows requiring recovery or long-task resumption. A plan, isolated review or temporary agent is not sufficient. Preserve L1/L2/optional L3, exact Git identity, drift validation, scoped packets and material checkpoints. Upgrade from LIGHTWEIGHT only for a concrete recovery need; do not silently discard established state.
 
 The choice is intentionally a short policy rather than a classifier service, daemon, database, or repository scanner. Lightweight mode has zero persistent Optimize state cost.
 
@@ -87,7 +87,7 @@ Schema-v2 recovery reads `.agent/current-work.md`. Schema-v1 recovery continues 
 
 One durable stateful work unit normally uses one root task. `work_type` and `work_id` are open, non-empty project identifiers, so milestones, features, issues, bug fixes, experiments, migrations, research, and releases use the same mechanism without a fixed taxonomy. `owner` is optional and becomes useful for delegation. Before closing, the work unit persists the final verified work SHA, review verdict, open/closed finding disposition, verification evidence, prohibitions, and any next-unit prerequisites. A later durable work unit may start in a fresh root task, validate repository state, and load its exact L0 authority. Lightweight work creates no artificial task boundary.
 
-This boundary removes prior work history from the default input while retaining every durable fact needed to resume. A work unit may use as many implementer, task-review, fix-review, and final-review cycles as correctness requires.
+This boundary removes prior work history from default input while retaining durable recovery facts. Reviews and tests are risk-based. After two consecutive substantive fix/re-review rounds without convergence, stop and reassess requirements, diff and failing evidence before adopting a new strategy.
 
 ## Generic authority and initialization
 
@@ -99,11 +99,7 @@ Schema-v2 L1 contains `current_state_path`, `active_state_path`, and an ordered 
 
 ## Agent waiting
 
-After dispatch, the parent records the agent and continuation and makes one bounded long wait. The normal range is 5–10 minutes for a narrow investigation and 10–30 minutes for implementation or a full review. The current runtime returns early when the agent produces a relevant event or completes.
-
-After a long wait expires, one status inspection decides whether to wait again, steer, recover, or handle failure. Repeated sub-five-minute waits and `list_agents` calls used only for liveness are protocol violations.
-
-The wait policy changes no `config.toml` setting. The current documented configuration exposes `features.multi_agent`, while `default_wait_timeout` and `max_wait_timeout` are not documented supported keys. The wait range therefore lives in the skill and each explicit tool call.
+Use current runtime/tool instructions for bounded event waits when actually dependent on an agent. Continue useful local work otherwise. Do not poll for liveness or automatically inspect status after each wake. A timeout, dependency, error or explicit request can justify a status check. Record continuation only when durable recovery needs it; do not duplicate dynamic tool contracts or fixed timeout values.
 
 ## User-level installation
 

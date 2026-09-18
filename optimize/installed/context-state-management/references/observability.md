@@ -1,14 +1,14 @@
 # Thin observability CLI
 
-Use this reference only at a task/review recording boundary or for an explicit export. These records are local evidence, not project state, and are never loaded for recovery by default.
+Use this reference only for an explicit user request, formal performance/behavior investigation, important incident forensics, an explicit need to preserve review evidence, or an explicitly requested export. Routine LIGHTWEIGHT work does not read this reference or record a summary; ordinary completion, blockers and handoffs are not recording triggers. These records are local evidence, not project state, and are never loaded for recovery by default.
 
 Resolve the selected Skill directory as `$SkillRoot` and invoke `$SkillRoot\scripts\optimize_context.py` with a verified Python 3 runtime. Do not assume that `python` is available. Reuse an already verified interpreter, such as the current bundled runtime when present, and prefer `-B` to avoid bytecode writes during checks. Do not install a runtime or change `PATH`, `config.toml`, or product logic to locate one. The default root is `%LOCALAPPDATA%\Optimize\observability`; `--observability-root` selects a controlled alternate root.
 
-Task summary finalization gets one attempt. Explicit read-only or no-write requirements and sandbox denial skip it. An unavailable interpreter or a failed command is reported once without retry. Do not save a task summary for observability export, read-only acceptance, or observability/log maintenance; those operations do not recursively record themselves.
+An explicitly justified task-summary recording gets one attempt. Explicit read-only or no-write requirements and sandbox denial skip it. An unavailable interpreter or a failed command is reported once without retry. Do not save a task summary for observability export, read-only acceptance, or observability/log maintenance; those operations do not recursively record themselves.
 
 ## Task summary
 
-Create one UTF-8 JSON input outside the business repository and run:
+Only at an authorized recording boundary, create one UTF-8 JSON input outside the business repository and run:
 
 ```powershell
 & $OptimizePython "$SkillRoot\scripts\optimize_context.py" save-task-summary `
@@ -32,7 +32,7 @@ The JSON and derived Markdown publish together as one immutable `summary/` direc
     "session": {"value": null, "source": "unavailable: no session ID exposed"}
   },
   "runtime": {
-    "optimize_version": {"value": "1.1.5", "source": "Skill VERSION"},
+    "optimize_version": {"value": "1.1.6", "source": "Skill VERSION"},
     "loaded_path": {"value": null, "source": "unavailable"},
     "model": {"value": null, "source": "unavailable"},
     "reasoning_effort": {"value": null, "source": "unavailable"},
@@ -60,7 +60,7 @@ To inspect one explicit session/task JSONL, replace `rollout` with `{"path":"C:\
 
 ## Reviewer return
 
-Choose the same stable task archive ID before dispatch or when the first report arrives. Save the returned body as bytes without editing it, create UTF-8 metadata, then run:
+When review evidence explicitly needs durable archiving, choose the same stable task archive ID before dispatch or when the first report arrives. Save the returned body as bytes without editing it, create UTF-8 metadata, then run:
 
 ```powershell
 & $OptimizePython "$SkillRoot\scripts\optimize_context.py" archive-review `

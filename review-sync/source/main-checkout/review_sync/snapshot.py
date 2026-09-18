@@ -258,9 +258,9 @@ def create_checkpoint(
     timestamp = int(datetime.fromisoformat(candidate.captured_at).timestamp())
     environment = {
         "GIT_AUTHOR_NAME": "Codex Review Sync",
-        "GIT_AUTHOR_EMAIL": "<REDACTED>",
+        "GIT_AUTHOR_EMAIL": "<REDACTED_EMAIL>",
         "GIT_COMMITTER_NAME": "Codex Review Sync",
-        "GIT_COMMITTER_EMAIL": "<REDACTED>",
+        "GIT_COMMITTER_EMAIL": "<REDACTED_EMAIL>",
         "GIT_AUTHOR_DATE": f"@{timestamp} +0000",
         "GIT_COMMITTER_DATE": f"@{timestamp} +0000",
     }
@@ -268,7 +268,7 @@ def create_checkpoint(
         "-c",
         "user.name=Codex Review Sync",
         "-c",
-        "user.email=<REDACTED>",
+        "user.email=<REDACTED_EMAIL>",
         "commit-tree",
         tree,
     ]

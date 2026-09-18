@@ -1,0 +1,40 @@
+{
+  "source_head": "7b04199363f075643cea55ed0d2ed0ede58df314",
+  "source_branch": "codex/v1.1-observability-global-install",
+  "source_origin": "NOT_CONFIGURED",
+  "source_push": "BLOCKED_NO_ORIGIN",
+  "optimize_installed_version": "1.1.6",
+  "targeted_tests": {
+    "worktree_installer_hook_cli": 29,
+    "security": 8,
+    "installer_entrypoints_final": 12
+  },
+  "full_tests": {
+    "count": 292,
+    "result": "PASS before final two-line pythonw-probe fix; final relevant 12 tests PASS",
+    "initial_failures": "2 fixture CRLF digest subtests; exact LF bytes restored without broadening original allowlist"
+  },
+  "program_digest": "825e838d2811f62bbce64a5426fc99048b8404fdf39e127f0558f0c878ffe469",
+  "registry_schema": 1,
+  "registry_bytes_preserved": true,
+  "main_tracked_bytes_preserved": true,
+  "hooks_bytes_preserved": true,
+  "scheduler": "VERIFIED_RUN",
+  "scheduler_interval": "PT10M",
+  "scheduler_transport": "pythonw.exe -B scheduled-task.pyw",
+  "probe_ran_at": "2026-09-18T02:42:18.708030+00:00",
+  "worktree_id": "0783fbee16698af0c0cb",
+  "checkpoint_repository": "ZnCucom/optimize-review-checkpoints",
+  "checkpoint_ref": "refs/heads/codex-sync/105ee9ae358f/0783fbee16698af0c0cb",
+  "local_snapshot_sha": "96969682bf9e27ea5163453a510588f2aa718d03",
+  "independent_ls_remote_sha": "96969682bf9e27ea5163453a510588f2aa718d03",
+  "result": "REMOTE_VERIFIED",
+  "paused": false,
+  "disabled": false,
+  "transport_adjustment": "Two existing isolated checkpoint stores use exact same-repository SSH-to-HTTPS rewrite and installed gh auth git-credential helper; no credential values saved, no source/global Git config or registry changes",
+  "limits": [
+    "Host lifecycle hook trust/invocation remains UNKNOWN/NOT_VERIFIED; regression tests and actual scheduler run are separate evidence.",
+    "Future worktree identities are automatic, but newly created stores do not inherit the two local HTTPS helper settings; SSH availability or equivalent credential setup remains a deployment prerequisite.",
+    "Normal Optimize source push blocked: no existing origin; checkpoint delivery is not a source branch push."
+  ]
+}

@@ -26,7 +26,7 @@ pwcli click e3
 pwcli dblclick e7
 pwcli type "search terms"
 pwcli press Enter
-pwcli fill e5 "user@example.com"
+pwcli fill e5 "<REDACTED_EMAIL>"
 pwcli drag e2 e8
 pwcli hover e4
 pwcli select e9 "option-value"

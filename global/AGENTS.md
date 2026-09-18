@@ -1,12 +1,17 @@
 <!-- BEGIN OPTIMIZE CONTEXT ROUTER -->
-## Optimize context routing
+## Global workflow policy
 
-Use the `context-state-management` skill for context recovery and long-running work. Choose LIGHTWEIGHT for small, single-session work; do not create `.agent` state. Choose STATEFUL for resumable, multi-phase, delegated, review-heavy, or compaction-risk work. A lightweight task may upgrade to STATEFUL when those conditions emerge.
-Before the final response, follow the Skill's common task finalization.
+- Continue clearly authorized reversible work without repeated approval.
+- Match verification to risk and scope; reuse successful evidence while relevant inputs remain unchanged.
+- Current runtime instructions and exposed tool schemas govern tool interfaces.
+- Avoid repeated reads, searches, tests, waits or status checks without new evidence. Do not poll agents for liveness or reread unchanged large files.
+- After two consecutive tool rounds produce no new evidence, code/state change, test result or error information, stop and reassess. Do not repeat the same pattern a third time without a new explicit reason.
+- Use the context-state-management skill in STATEFUL mode only when durable recovery is valuable for long-running, cross-session or interruption-prone work. Otherwise remain LIGHTWEIGHT.
+- Project AGENTS.md supplies project-specific constraints.
 <!-- END OPTIMIZE CONTEXT ROUTER -->
 
 <!-- BEGIN GITHUB REVIEW CHECKPOINT SYNC V1 -->
 ## GitHub review checkpoint sync
 
-For a registered worktree, check review-sync status once at task start. Before handling content the user forbids from upload, run and confirm `pause`; natural language alone is not the background hard switch. After all source and public task-state writes, request a bounded `sync-now` for completion, blocker, failed tests, or review wait. Report PENDING/UNKNOWN unless remote SHA verification completed. Never restart reasoning because sync failed, and preserve all project approval and hard-stop rules.
+Review Sync normally runs through lifecycle hooks, queue, the scheduled background sync, and remote SHA verification. Do not perform routine model-side status checks at task start or sync-now at task completion. Intervene only for an explicit sync request, pause/resume, background failure, safety decisions, remote divergence/quarantine, or a clearly necessary immediate sync. Before handling content the user forbids from upload, run and confirm `pause`; natural language alone is not the background hard switch. Report PENDING/UNKNOWN unless remote SHA verification completed. Background failure must not restart reasoning or cause an unbounded retry loop. Preserve project approval and hard-stop rules.
 <!-- END GITHUB REVIEW CHECKPOINT SYNC V1 -->

@@ -95,7 +95,7 @@ Refs can go stale. When a command fails due to a missing ref, snapshot again.
 ```bash
 "$PWCLI" open https://example.com/form
 "$PWCLI" snapshot
-"$PWCLI" fill e1 "user@example.com"
+"$PWCLI" fill e1 "<REDACTED_EMAIL>"
 "$PWCLI" fill e2 "password123"
 "$PWCLI" click e3
 "$PWCLI" snapshot

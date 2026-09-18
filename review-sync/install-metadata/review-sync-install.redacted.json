@@ -41,7 +41,7 @@
   "original_agents": "<REDACTED>",
   "original_hooks": "<REDACTED>",
   "program": "C:\\Users\\chest\\.codex\\review-sync",
-  "program_digest": "7f1151fe6187028c761ca84d116e5eff37939e533b442c972886bd3201c062c2",
+  "program_digest": "825e838d2811f62bbce64a5426fc99048b8404fdf39e127f0558f0c878ffe469",
   "scheduler": {
     "codex_home": "C:\\Users\\chest\\.codex",
     "data_root": "C:\\Users\\chest\\AppData\\Local\\CodexReviewSync",

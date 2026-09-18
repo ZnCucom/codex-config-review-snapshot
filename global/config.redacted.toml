@@ -1,11 +1,11 @@
 # Auto-injected by Yoda MaaS
 model_provider = "yoda"
-model = "gpt-6-astra"
+model = "gpt-5.6-sol"
 
 personality = "pragmatic"
 sandbox_mode = "danger-full-access"
 web_search = "live"
-model_verbosity = "high"
+model_verbosity = "medium"
 service_tier = "default"
 
 
@@ -13,7 +13,8 @@ model_reasoning_effort = "medium"
 
 
 
-notify = [ "C:\\Users\\chest\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\6f12e0ef1c6e5061\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
+
+notify = [ "C:\\Users\\chest\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\fcf5d08964516500\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
 
 [marketplaces.openai-bundled]
 source_type = "local"
@@ -30,9 +31,6 @@ enabled = true
 enabled = true
 
 [plugins."visualize@openai-bundled"]
-enabled = true
-
-[plugins."sites@openai-bundled"]
 enabled = true
 
 [plugins."documents@openai-primary-runtime"]
@@ -61,28 +59,28 @@ js_repl = false
 
 [mcp_servers.node_repl]
 args = []
-command = 'C:\Users\chest\AppData\Local\OpenAI\Codex\runtimes\cua_node\6f12e0ef1c6e5061\bin\node_repl.exe'
+command = 'C:\Users\chest\AppData\Local\OpenAI\Codex\runtimes\cua_node\fcf5d08964516500\bin\node_repl.exe'
 startup_timeout_sec = 120
 
 [mcp_servers.node_repl.env]
 NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
-NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\chest\AppData\Local\OpenAI\Codex\runtimes\cua_node\6f12e0ef1c6e5061\bin\node_modules'
-NODE_REPL_NODE_PATH = 'C:\Users\chest\AppData\Local\OpenAI\Codex\runtimes\cua_node\6f12e0ef1c6e5061\bin\node.exe'
-NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\chest\.codex;C:\Users\chest\AppData\Local\OpenAI\Codex\runtimes\cua_node\6f12e0ef1c6e5061\bin\node_modules'
+NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\chest\AppData\Local\OpenAI\Codex\runtimes\cua_node\fcf5d08964516500\bin\node_modules'
+NODE_REPL_NODE_PATH = 'C:\Users\chest\AppData\Local\OpenAI\Codex\runtimes\cua_node\fcf5d08964516500\bin\node.exe'
+NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\chest\.codex;C:\Users\chest\AppData\Local\OpenAI\Codex\runtimes\cua_node\fcf5d08964516500\bin\node_modules'
 CODEX_HOME = 'C:\Users\chest\.codex'
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 BROWSER_USE_TINYSKY_ENABLED = "0"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.908.70816"
-NODE_REPL_TRUSTED_SERVICES = '{"browser":"C:/Users/chest/.codex/plugins/cache/openai-bundled/browser/26.908.70816/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+BROWSER_USE_CODEX_APP_VERSION = "26.911.61220"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"C:/Users/chest/.codex/plugins/cache/openai-bundled/browser/26.911.61220/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
 SKY_CUA_NATIVE_PIPE = "1"
 SKY_CUA_NATIVE_PIPE_DIRECTORY = "<REDACTED>"
-CODEX_CLI_PATH = 'C:\Users\chest\AppData\Local\OpenAI\Codex\bin\12219cbfbcbddde7\codex.exe'
+CODEX_CLI_PATH = 'C:\Users\chest\AppData\Local\OpenAI\Codex\bin\eab8377aebac6c07\codex.exe'
 
 [mcp_servers.cua_repl]
-command = 'C:\Program Files\WindowsApps\OpenAI.Codex_26.908.9136.0_x64__2p2nqsd0c76g0\app\ChatGPT.exe'
+command = 'C:\Program Files\WindowsApps\OpenAI.Codex_26.911.7940.0_x64__2p2nqsd0c76g0\app\ChatGPT.exe'
 enabled = false
 
 [desktop]
@@ -114,7 +112,6 @@ trust_level = "trusted"
 [projects.'c:\users\chest\documents\codex\2026-09-17\codex-superpowers-optimize-agents-md-skills']
 trust_level = "trusted"
 
-# Auto-injected by Yoda MaaS
 [model_providers.yoda]
 name = "OpenAI"
 requires_openai_auth = true
